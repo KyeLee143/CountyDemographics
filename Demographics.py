@@ -12,12 +12,12 @@ def render_main():
 
 def  get_state_optons(counties): 
         listOfStates = []
-        for each county in counties
+        for data in counties
             if data ['County'] not in listOfStates
-                add ['County'] to listOfStates
+                listOfStates.append (data['County'])
         options = []        
         for each state in ListOfStates:
-            options = options + Markup("<option value=\"" + s + "\">" + s + "</option>")
+            options = options + Markup("<option value=\"" + s + "\">" + s + "</options>")
         return options   
 
 
