@@ -16,7 +16,7 @@ def  get_state_optons(counties):
             if data ['County'] not in listOfStates:
                 listOfStates.append (data['County'])
         options = []        
-        for each state in ListOfStates:
+        for data in ListOfStates:
             options = options + Markup("<option value=\"" + s + "\">" + s + "</options>")
         return options   
 
