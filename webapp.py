@@ -12,8 +12,8 @@ def render_main():
 
 def  get_state_optons(counties): 
         listOfStates = []
-        for data in counties
-            if data ['County'] not in listOfStates
+        for data in counties:
+            if data ['County'] not in listOfStates:
                 listOfStates.append (data['County'])
         options = []        
         for each state in ListOfStates:
