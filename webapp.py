@@ -9,15 +9,16 @@ def render_main():
     with open('county_demographics.json') as demographics_data:
         counties = json.load(demographics_data)
     return render_template('home.html', options = get_state_optons(counties))
+    
 
 def  get_state_optons(counties): 
         listOfStates = []
         for data in counties:
             if data ['County']:
                 listOfStates.append (data['County'])
-        options = []        
-        for data in ListOfStates:
-            options = options + Markup("<option value=\"" + s + "\">" + s + "</options>")
+        options = '' 
+        for data in listOfStates:
+            options = options + Markup("<option value=\"" + data + "\">" + data + "</options>")
         return options   
 
 
