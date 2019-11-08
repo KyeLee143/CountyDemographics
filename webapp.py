@@ -12,6 +12,11 @@ def render_main():
     
 
 @app.route("/FunFacts")
+def FunFact():
+    with open('county_demographics.json') as demographics_data:
+        counties = json.load(demographics_data)
+    return render_template('home.html', options = get_state_optons(counties))
+
 def  get_state_optons(counties): 
         listOfStates = []
         for data in counties:
