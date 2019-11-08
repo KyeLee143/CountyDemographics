@@ -11,6 +11,7 @@ def render_main():
     return render_template('home.html', options = get_state_optons(counties))
     
 
+@app.route("/FunFacts")
 def  get_state_optons(counties): 
         listOfStates = []
         for data in counties:
