@@ -15,17 +15,26 @@ def render_main():
 def FunFact():
     with open('county_demographics.json') as demographics_data:
         counties = json.load(demographics_data)
-    return render_template('home.html', options = get_state_optons(counties))
+    return render_template('FunFacts.html', options = get_state_optons(counties))
 
 def  get_state_optons(counties): 
         listOfStates = []
         for data in counties:
-            if data ['County']:
-                listOfStates.append (data['County'])
+            if not (data ['State'] in listOfStates):
+                listOfStates.append (data['State'])
         options = '' 
         for data in listOfStates:
             options = options + Markup("<option value=\"" + data + "\">" + data + "</options>")
         return options   
+       
+@app.route("/FunFacts")
+def render_FunFacts():
+    fact = request.args['FunFact']
+    for data in counties:
+        if fact == ['State']:
+            response = ['Language Other than English at Home']
+    
+        return render_template('response.html', responseFromServer=response)   
 
 
 if __name__=="__main__":
